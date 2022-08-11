@@ -1,0 +1,8 @@
+*~
+*.bak
+*.orig
+*.sw[a-z]
+\#*\#
+
+*.iso
+/.workdir/

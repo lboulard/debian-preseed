@@ -1,0 +1,3 @@
+pressed*.cfg                    eol=lf
+*.sh                            eol=lf
+authorized_keys                 eol=lf
