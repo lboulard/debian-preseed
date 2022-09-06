@@ -40,7 +40,7 @@ sha256sum -c SHA256SUMS
 
 # Update installer ISO images with preseed files
 ./make-preseed-iso.sh -p vmware -o vm-netinst-11.4.0-amd64-netinst.iso firmware-11.4.0-amd64-netinst.iso
-./make-preseed-iso.sh -p laptop -o laptop-netinst-11.4.0-amd64-netinst.iso firmware-11.4.0-amd64-netinst.iso
+./make-preseed-iso.sh -p headless -o headless-netinst-11.4.0-amd64-netinst.iso firmware-11.4.0-amd64-netinst.iso
 ```
 
 
@@ -48,14 +48,14 @@ sha256sum -c SHA256SUMS
 
 All `preseed.cfg` options: <https://preseed.debian.net/debian-preseed/>.
 
-Examples for VMware and headless laptop are included. VMware example should
+Examples for VMware and headless machines are included. VMware example should
 work in any other virtualisation environment like libvirt, Vagrant or Hyper-V.
 
 Those examples install minimal packages and default SSH access as root for
 further configuration. Authorized SSH keys are volatile and only used until
 persistent SSH public keys are installed.
 
-- VMware
+- VMware machine
     - GPT partition table and no LVM
     - XFS root `/` partition
     - Swap size is twice RAM size (limited to 16GB)
@@ -63,7 +63,7 @@ persistent SSH public keys are installed.
     - Display IP address on console
     - `ifupdown` for network configuration
 
-- laptop
+- Headless machine
     - GTP partition table with LVM
     - Expect EFI but shall work on BIOS boot
     - EXT4 `/boot` partition
