@@ -48,8 +48,9 @@ sha256sum -c SHA256SUMS
 
 All `preseed.cfg` options: <https://preseed.debian.net/debian-preseed/>.
 
-Examples for VMware and headless machines are included. VMware example should
-work in any other virtualisation environment like libvirt, Vagrant or Hyper-V.
+Examples for VMware, headless and desktop machines are included. VMware example
+should work in any other virtualisation environment like libvirt, Vagrant or
+Hyper-V.
 
 Those examples install minimal packages and default SSH access as root for
 further configuration. Authorized SSH keys are volatile and only used until
@@ -76,6 +77,19 @@ persistent SSH public keys are installed.
     - Linux Kernel image from bullseyes backports (Linux 5.18)
     - No sleep when lid close.
     - `Network Manager` for network configuration
+
+- Desktop machine
+    - GPT partition table and no LVM
+    - EXT2 `/boot` partition
+    - XFS root `/` partition
+    - Swap partition size as 125% of RAM size
+    - Display IP address on console
+    - Keyboard with Right Alt as Compose key
+    - Keyboard with Caps Lock as Control Key
+    - Linux Kernel image from bullseyes backports (Linux 5.18)
+    - No sleep when lid close.
+    - Frame buffer console in 1024x768 resolution and Terminus font 8x14
+    - Install default desktop of Debian 11 (Gnome 3.38)
 
 OpenSSH server running and root login accessible by SSH authorized key.
 
