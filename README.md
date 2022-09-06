@@ -61,15 +61,19 @@ persistent SSH public keys are installed.
     - Swap size is twice RAM size (limited to 16GB)
     - BIOS or EFI
     - Display IP address on console
+    - Keyboard with Right Alt as Compose key
+    - Linux Kernel image from bullseyes backports (Linux 5.18)
     - `ifupdown` for network configuration
 
 - Headless machine
     - GTP partition table with LVM
     - Expect EFI but shall work on BIOS boot
-    - EXT4 `/boot` partition
+    - EXT2 `/boot` partition
     - XFS root `/` partition
     - Reserve less swap than VMware preseed (125% of RAM size)
     - Display IP address on console
+    - Keyboard with Right Alt as Compose key
+    - Linux Kernel image from bullseyes backports (Linux 5.18)
     - No sleep when lid close.
     - `Network Manager` for network configuration
 
