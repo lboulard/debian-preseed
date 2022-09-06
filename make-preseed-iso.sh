@@ -59,6 +59,19 @@ function add_preseed_to_initrd() {
   chmod -w -R "$isofiles/install.amd/"
 }
 
+function add_static_to_cdrom() {
+  progress "Adding ./static content to ISO /preseed..."
+
+  local static
+  static="./cdrom"
+  install -d -m 755 "$isofiles/preseed"
+  (
+    cd "$static"
+    find . -name \* -a ! \( -name \*~ -o -name \*.bak -o -name \*.orig \) -print0
+  ) | cpio -v -p -L -0 -D "$static" "$isofiles/preseed"
+  chmod -w -R "$isofiles/preseed"
+}
+
 function make_auto_the_default_isolinux_boot_option() {
   progress "Setting 'auto' as default ISOLINUX boot entry..."
 
@@ -238,6 +251,7 @@ install -m 0755 -d "$workdir"
 
 extract_iso "$orig_iso"
 add_preseed_to_initrd "$preseed_cfg"
+add_static_to_cdrom
 make_auto_the_default_isolinux_boot_option
 make_auto_the_default_grub_boot_option
 update_md5_checksum
