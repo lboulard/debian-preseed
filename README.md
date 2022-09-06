@@ -63,7 +63,10 @@ persistent SSH public keys are installed.
     - BIOS or EFI
     - Display IP address on console
     - Keyboard with Right Alt as Compose key
+    - Keyboard with Caps Lock as Control Key
+    - Frame buffer console in 1024x768 resolution and Terminus font 8x14
     - Linux Kernel image from bullseyes backports (Linux 5.18)
+    - `lm-sensors` for system information
     - `ifupdown` for network configuration
 
 - Headless machine
@@ -74,8 +77,11 @@ persistent SSH public keys are installed.
     - Reserve less swap than VMware preseed (125% of RAM size)
     - Display IP address on console
     - Keyboard with Right Alt as Compose key
+    - Keyboard with Caps Lock as Control Key
     - Linux Kernel image from bullseyes backports (Linux 5.18)
+    - `lm-sensors` for system information
     - No sleep when lid close.
+    - Frame buffer console in 1024x768 resolution and Terminus font 8x14
     - `Network Manager` for network configuration
 
 - Desktop machine
@@ -88,8 +94,10 @@ persistent SSH public keys are installed.
     - Keyboard with Caps Lock as Control Key
     - Linux Kernel image from bullseyes backports (Linux 5.18)
     - No sleep when lid close.
+    - `lm-sensors` for system information
     - Frame buffer console in 1024x768 resolution and Terminus font 8x14
     - Install default desktop of Debian 11 (Gnome 3.38)
+    - `Network Manager` for network configuration
 
 OpenSSH server running and root login accessible by SSH authorized key.
 
