@@ -58,14 +58,14 @@ persistent SSH public keys are installed.
 
 - VMware machine
     - GPT partition table and no LVM
+    - BIOS or EFI
     - XFS root `/` partition
     - Swap size is twice RAM size (limited to 16GB)
-    - BIOS or EFI
     - Display IP address on console
     - Keyboard with Right Alt as Compose key
     - Keyboard with Caps Lock as Control Key
-    - Frame buffer console in 1024x768 resolution and Terminus font 8x14
     - Linux Kernel image from bullseyes backports (Linux 5.18)
+    - Frame buffer console in 1024x768 resolution and Terminus font 8x14
     - `lm-sensors` for system information
     - `ifupdown` for network configuration
 
@@ -74,30 +74,31 @@ persistent SSH public keys are installed.
     - Expect EFI but shall work on BIOS boot
     - EXT2 `/boot` partition
     - XFS root `/` partition
-    - Reserve less swap than VMware preseed (125% of RAM size)
+    - Swap partition size as 125% of RAM size, capped to 16GB
     - Display IP address on console
     - Keyboard with Right Alt as Compose key
     - Keyboard with Caps Lock as Control Key
     - Linux Kernel image from bullseyes backports (Linux 5.18)
-    - `lm-sensors` for system information
-    - No sleep when lid close.
     - Frame buffer console in 1024x768 resolution and Terminus font 8x14
+    - `lm-sensors` for system information
     - `Network Manager` for network configuration
+    - No sleep when lid close.
 
 - Desktop machine
     - GPT partition table and no LVM
+    - Expect EFI but shall work on BIOS boot
     - EXT2 `/boot` partition
     - XFS root `/` partition
-    - Swap partition size as 125% of RAM size
+    - Swap partition size as 125% of RAM size, capped to 16GB
     - Display IP address on console
     - Keyboard with Right Alt as Compose key
     - Keyboard with Caps Lock as Control Key
     - Linux Kernel image from bullseyes backports (Linux 5.18)
-    - No sleep when lid close.
-    - `lm-sensors` for system information
     - Frame buffer console in 1024x768 resolution and Terminus font 8x14
-    - Install default desktop of Debian 11 (Gnome 3.38)
+    - `lm-sensors` for system information
     - `Network Manager` for network configuration
+    - No sleep when lid close.
+    - Install default desktop of Debian 11 (Gnome 3.38)
 
 OpenSSH server running and root login accessible by SSH authorized key.
 
